@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('/push_v1/', push_v1),
-    path('/subscription/', subscription),
+    path('/push_v1', push_v1),
+    path('/subscription', subscription),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #url(r'^fbpush/', include('fbpush.urls'))

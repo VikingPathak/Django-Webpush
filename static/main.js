@@ -125,7 +125,7 @@ function initializeUI() {
 if ('serviceWorker' in navigator && 'PushManager' in window) {
 	console.log('Service Worker and Push is supported');
 
-	navigator.serviceWorker.register("{% static '/static/sw.js' %}")
+	navigator.serviceWorker.register("{% static 'sw.js' %}")
 		.then(function(swReg) {
 			console.log('Service Worker is registered', swReg);
 
@@ -144,7 +144,7 @@ function push_message() {
 	console.log("sub_token", localStorage.getItem('sub_token'));
 	$.ajax({
 		type: "POST",
-		url: "/push_v1/",
+		url: "/push_v1",
 		contentType: 'application/json; charset=utf-8',
 		dataType:'json',
 		data: JSON.stringify({'sub_token':localStorage.getItem('sub_token')}),
@@ -160,7 +160,7 @@ function push_message() {
 $(document).ready(function(){
 	$.ajax({
 		type:"GET",
-		url:'/subscription/',
+		url:'/subscription',
 		success:function(response){
 			console.log("response",response);
 			localStorage.setItem('applicationServerPublicKey',response.public_key);

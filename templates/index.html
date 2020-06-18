@@ -1,5 +1,3 @@
-{% load static %}
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,7 +11,13 @@
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{% static '/static/index.css' %}">
+
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'index.css' %}" type="text/css"/>
+	<script type="text/javascript" src="{% static 'sw.js' %}"></script>
+	<script src="{% static 'main.js' %}"></script>
+	<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
 </head>
 
 <body>
@@ -41,8 +45,6 @@
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="push_message()">Test Push Notification</button>
 		</section>
 	</main>
-    <script type="text/javascript" src="{% static '/static/sw.js' %}"></script>
-	<script src="{% static '/static/main.js' %}"></script>
-	<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
 </body>
 </html>
